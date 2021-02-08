@@ -73,44 +73,72 @@ class Exercicios {
 		p.valor = 15.00
 		println p.nome + " - " + p.valor
 	}
-	
+
 	@Test
 	void exercicio6() {
 		Cl c = new Cl(nome: "fernando", data: new Date())
 		println c.getNome() + " - " + c.getData()
 		println ex
-		
 	}
-	
+
 	//aula 10
 	@Test
 	void exercicio7() {
 		Venda v = new Venda()
 		println v.vender(100)
 		println v.vender(100 , 15)
-		
+
 	}
-	
+
 	//aula 11
 	@Test
 	void exercicio8() {
 		Somar soma = new Somar()
 		println	soma.somar(10)
 		println	soma.somar(10,10)
-		println	soma.somar(10,10,10)		
-		
+		println	soma.somar(10,10,10)
+
 	}
-	
+
 	//aula 12
 	@Test
 	void exercicio9() {
 		Cliente c = null
 		c?.nome = "Fernando"
 		println c?.getNome()
-		
+
 		Cliente c2 = new Cliente()
 		c2?.nome = "Fernando"
 		println c2.getNome()
 		println c2.nome
 	}
+
+	@Test
+	void exercicio10() {
+		List<String> colecao = new ArrayList()
+		colecao.add("Fernando")
+		colecao.add(null)
+		colecao.add("anny")
+		colecao.add("rita")
+		println colecao
+
+		//    Java
+		//	for (String item: colecao) {
+		//		if (item != null) {
+		//			item = item.toUpperCase()
+
+		//		}
+
+		//	}
+
+		colecao = colecao*.toUpperCase()
+		println colecao
+
+		colecao = colecao*.replace("A", "@")
+		println colecao
+
+
+	}
+
+
 }

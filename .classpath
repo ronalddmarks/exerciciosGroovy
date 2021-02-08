@@ -8,8 +8,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="con" path="GROOVY_SUPPORT"/>
-	<classpathentry kind="lib" path="/home/ronald/Área de Trabalho/bagunça/groovy-f1-win64/1.ferramentas/jars/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="/home/ronald/Área de Trabalho/bagunça/groovy-f1-win64/1.ferramentas/jars/hsqldb.jar"/>
-	<classpathentry kind="lib" path="/home/ronald/Área de Trabalho/bagunça/groovy-f1-win64/1.ferramentas/jars/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="D:/Ronald/Desenvolvimento/workspace2/exerciciosGroovy/groovy-material/1.ferramentas/jars/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Ronald/Desenvolvimento/workspace2/exerciciosGroovy/groovy-material/1.ferramentas/jars/hsqldb.jar"/>
+	<classpathentry kind="lib" path="D:/Ronald/Desenvolvimento/workspace2/exerciciosGroovy/groovy-material/1.ferramentas/jars/junit-4.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
