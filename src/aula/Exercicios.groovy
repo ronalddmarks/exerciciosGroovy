@@ -90,7 +90,7 @@ class Exercicios {
 
 	}
 
-	//aula 11
+
 	@Test
 	void exercicio8() {
 		Somar soma = new Somar()
@@ -100,7 +100,7 @@ class Exercicios {
 
 	}
 
-	//aula 12
+
 	@Test
 	void exercicio9() {
 		Cliente c = null
@@ -137,6 +137,21 @@ class Exercicios {
 		colecao = colecao*.replace("A", "@")
 		println colecao
 
+
+	}
+
+	@Test
+	void exercicio11() {
+
+		//		try {
+		//			URL url = new URL ("http://www.goog.e.com.br")
+		//		} catch (Exception e) {
+		//			e.printStackTrace()
+		//		}
+		//		println url
+
+		URL url = new URL ("http://www.goog.e.com.br")
+		println url
 
 	}
 
