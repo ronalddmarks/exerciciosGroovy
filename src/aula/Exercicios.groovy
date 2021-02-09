@@ -2,6 +2,7 @@ package aula
 
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE as ex
+import static org.junit.Assert.*
 
 import org.junit.Test
 
@@ -217,6 +218,43 @@ class Exercicios {
 
 
 	}
+	
+	@Test
+	void exercicio13ponto2() {
+	    //BigDecimal vl = new BigDecimal(10)
+		
+		BigDecimal vl = 10
+		println vl
+		
+	
+		//BigDecimal x = vl.add(BigDecimal(1))
+		vl = vl +1
+		println vl
+        vl++	
+		println vl
+		println vl - 5
+ 		
+		
+		Date data = new Date()
+		println data
+	//	data++
+		println data
+	//	data--
+		println data
+	//	println data + 10
+		
+	}
+	
+	@Test
+	void exercicio14() {
+		
+		
+		
+	}
+	
+	
+	
+	
 
 
 }
