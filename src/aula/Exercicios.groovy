@@ -157,6 +157,55 @@ class Exercicios {
 		println url
 
 	}
+	
+	@Test
+	void exercicio12() {
+		
+		String nome = null
+		if(nome) {
+			println true
+		}else { 
+			println false
+		}
+		
+		
+		nome = "Fer"
+		if (nome) {
+			println true
+		}else {
+			println false
+		}
+		
+			
+		int valor = 0
+		if(valor) {
+			println true 
+		}else {
+			println false
+		}	
+		
+		valor = 1
+		if(valor) {
+			println true
+		}else {
+			println false
+		}
+		
+		List<String> colecao = new ArrayList(0)
+		if(colecao) {
+			println true
+		}else {
+			println false
+		}
+		
+		colecao.add("Fer")
+		if(colecao) {
+			println true
+		}else {
+			println false
+		}
+	// nemum desses funcionam em java
+	}
 
 	@Test
 	void exercicio12() {
