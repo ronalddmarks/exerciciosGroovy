@@ -1,14 +1,16 @@
 package aula
 
 
+import static javax.swing.JFrame.EXIT_ON_CLOSE as ex
+
 import org.junit.Test
 
 import classes.Cliente
+import classes.Cliente as Cl
+import classes.Nota
 import classes.Produto
 import classes.Somar
 import classes.Venda
-import classes.Cliente as Cl
-import static javax.swing.JFrame.EXIT_ON_CLOSE as ex
 
 
 class Exercicios {
@@ -150,58 +152,70 @@ class Exercicios {
 		//		}
 		//		println url
 
-		URL url = new URL ("http://www.goog.e.com.br")
+		URL url = new URL ("http://www.google.com.br")
 		println url
 
 	}
-	
+
 	@Test
 	void exercicio12() {
-		
+
 		String nome = null
 		if(nome) {
 			println true
-		}else { 
+		}else {
 			println false
 		}
-		
-		
+
+
 		nome = "Fer"
 		if (nome) {
 			println true
 		}else {
 			println false
 		}
-		
-			
+
+
 		int valor = 0
 		if(valor) {
-			println true 
+			println true
 		}else {
 			println false
-		}	
-		
+		}
+
 		valor = 1
 		if(valor) {
 			println true
 		}else {
 			println false
 		}
-		
+
 		List<String> colecao = new ArrayList(0)
 		if(colecao) {
 			println true
 		}else {
 			println false
 		}
-		
+
 		colecao.add("Fer")
 		if(colecao) {
 			println true
 		}else {
 			println false
 		}
-	// nemum desses funcionam em java
+		// nemum desses funcionam em java
+	}
+
+	@Test
+	void exercicio13() {
+		Nota n1 = new Nota(itens: 2, valor: 20)
+		Nota n2 = new Nota(itens: 2, valor: 20)
+		Nota n3 = n1 + n2
+		println n3.valor + " - " + n3.itens
+		n1++
+		println n1.valor + " - " + n1.itens
+
+
 	}
 
 
