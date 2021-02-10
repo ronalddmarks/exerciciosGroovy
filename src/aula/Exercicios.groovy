@@ -8,6 +8,7 @@ import org.junit.Test
 
 import classes.Cliente
 import classes.Cliente as Cl
+import classes.Funcionario
 import classes.Nota
 import classes.Produto
 import classes.Somar
@@ -157,55 +158,6 @@ class Exercicios {
 		println url
 
 	}
-	
-	@Test
-	void exercicio12() {
-		
-		String nome = null
-		if(nome) {
-			println true
-		}else { 
-			println false
-		}
-		
-		
-		nome = "Fer"
-		if (nome) {
-			println true
-		}else {
-			println false
-		}
-		
-			
-		int valor = 0
-		if(valor) {
-			println true 
-		}else {
-			println false
-		}	
-		
-		valor = 1
-		if(valor) {
-			println true
-		}else {
-			println false
-		}
-		
-		List<String> colecao = new ArrayList(0)
-		if(colecao) {
-			println true
-		}else {
-			println false
-		}
-		
-		colecao.add("Fer")
-		if(colecao) {
-			println true
-		}else {
-			println false
-		}
-	// nemum desses funcionam em java
-	}
 
 	@Test
 	void exercicio12() {
@@ -296,6 +248,8 @@ class Exercicios {
 	
 	@Test
 	void exercicio14() {
+		Funcionario f = new Funcionario(nome: "Fer", idade: 10, salario: 1500.59)
+		println f
 		
 		
 		
