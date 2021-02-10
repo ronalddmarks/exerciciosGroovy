@@ -2,13 +2,13 @@ package aula
 
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE as ex
-import static org.junit.Assert.*
 
 import org.junit.Test
 
 import classes.Cliente
 import classes.Cliente as Cl
 import classes.Funcionario
+import classes.Funcionario2
 import classes.Nota
 import classes.Produto
 import classes.Somar
@@ -250,6 +250,17 @@ class Exercicios {
 	void exercicio14() {
 		Funcionario f = new Funcionario(nome: "Fer", idade: 10, salario: 1500.59)
 		println f
+		
+		
+		
+	}
+	
+	@Test
+	void exercicio15() {
+		Funcionario2 f1 = new Funcionario2(nome: "Fer", idade: 10, salario: 10)
+		Funcionario2 f2 = new Funcionario2(nome: "Fer", idade: 10, salario: 10)
+		println f1.equals(f2)
+		println f2.equals(f1)
 		
 		
 		
