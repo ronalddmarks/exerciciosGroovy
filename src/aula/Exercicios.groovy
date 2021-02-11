@@ -7,6 +7,7 @@ import org.junit.Test
 
 import classes.Cliente
 import classes.Cliente as Cl
+import classes.Conexao
 import classes.Funcionario
 import classes.Funcionario2
 import classes.Nota
@@ -275,6 +276,22 @@ class Exercicios {
 	//	p.cliente = "fer"
 		
 	}
+	
+	@Test
+	void exercicio17() {
+		
+		Conexao.instance.valor = 10
+		println Conexao.instance.valor
+		Conexao con = Conexao.instance
+		con.valor = 11
+		println Conexao.instance.valor
+		
+	//	Conexao x = new Conexao()
+		
+		
+	}
+	
+	
 
 
 
