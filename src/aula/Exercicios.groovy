@@ -7,6 +7,7 @@ import org.junit.Test
 
 import classes.Cliente
 import classes.Cliente as Cl
+import classes.Comida
 import classes.Conexao
 import classes.Funcionario
 import classes.Funcionario2
@@ -287,6 +288,18 @@ class Exercicios {
 		println Conexao.instance.valor
 		
 	//	Conexao x = new Conexao()
+		
+		
+	}
+	
+	@Test
+	void exercicio18() {
+		
+		Comida comida = Comida.builder().fruta("marca").bebida("Coca-cola").doce("casadinho").build()
+		println comida.fruta 
+		println comida.bebida
+		println comida.doce
+		
 		
 		
 	}
