@@ -266,45 +266,66 @@ class Exercicios {
 		println f2.equals(f2)
 
 	}
-	
+
 	@Test
 	void exercicio16() {
-		
+
 		Pedido p = new Pedido(cliente: "Fernando", numero: 10)
 		println p.cliente + " - " + p.numero
 		println p
-		
-	//	p.cliente = "fer"
-		
+
+		//	p.cliente = "fer"
+
 	}
-	
+
 	@Test
 	void exercicio17() {
-		
+
 		Conexao.instance.valor = 10
 		println Conexao.instance.valor
 		Conexao con = Conexao.instance
 		con.valor = 11
 		println Conexao.instance.valor
-		
-	//	Conexao x = new Conexao()
-		
-		
+
+		//	Conexao x = new Conexao()
+
+
 	}
-	
+
 	@Test
 	void exercicio18() {
-		
+
 		Comida comida = Comida.builder().fruta("marca").bebida("Coca-cola").doce("casadinho").build()
-		println comida.fruta 
+		println comida.fruta
 		println comida.bebida
 		println comida.doce
-		
-		
-		
+
+
+
 	}
-	
-	
+
+	@Test
+	void exercicio19() {
+		
+		def objeto = "texto"
+		println objeto.getClass()
+		
+		objeto = 10
+		println objeto.getClass()
+		
+		objeto = 10.00
+		println objeto.getClass()
+		
+		objeto = new Nota(itens: 2, valor: 20)
+		println objeto.getClass()
+		
+		objeto = new Pedido(cliente: "fernando", numero: 10)
+		println objeto.getClass()
+		
+
+	}
+
+
 
 
 
