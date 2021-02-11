@@ -10,6 +10,7 @@ import classes.Cliente as Cl
 import classes.Funcionario
 import classes.Funcionario2
 import classes.Nota
+import classes.Pedido
 import classes.Produto
 import classes.Somar
 import classes.Venda
@@ -219,56 +220,65 @@ class Exercicios {
 
 
 	}
-	
+
 	@Test
 	void exercicio13ponto2() {
-	    //BigDecimal vl = new BigDecimal(10)
-		
+		//BigDecimal vl = new BigDecimal(10)
+
 		BigDecimal vl = 10
 		println vl
-		
-	
+
+
 		//BigDecimal x = vl.add(BigDecimal(1))
 		vl = vl +1
 		println vl
-        vl++	
+		vl++
 		println vl
 		println vl - 5
- 		
-		
+
+
 		Date data = new Date()
 		println data
-	//	data++
+		//	data++
 		println data
-	//	data--
+		//	data--
 		println data
-	//	println data + 10
-		
+		//	println data + 10
+
 	}
-	
+
 	@Test
 	void exercicio14() {
 		Funcionario f = new Funcionario(nome: "Fer", idade: 10, salario: 1500.59)
 		println f
-		
-		
-		
+
+
+
 	}
-	
+
 	@Test
 	void exercicio15() {
 		Funcionario2 f1 = new Funcionario2(nome: "Fer", idade: 10, salario: 10)
 		Funcionario2 f2 = new Funcionario2(nome: "Fer", idade: 10, salario: 10)
 		println f1.equals(f2)
-		println f2.equals(f1)
-		
-		
-		
+		println f2.equals(f2)
+
 	}
 	
-	
-	
-	
+	@Test
+	void exercicio16() {
+		
+		Pedido p = new Pedido(cliente: "Fernando", numero: 10)
+		println p.cliente + " - " + p.numero
+		println p
+		
+	//	p.cliente = "fer"
+		
+	}
+
+
+
+
 
 
 }
