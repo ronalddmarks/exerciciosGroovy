@@ -15,6 +15,7 @@ import classes.Nota
 import classes.Pedido
 import classes.Produto
 import classes.Somar
+import classes.Teste
 import classes.Venda
 
 
@@ -323,6 +324,37 @@ class Exercicios {
 		println objeto.getClass()
 		
 
+	}
+	
+	@Test
+	void exercicio20() {
+	
+		def teste = new Teste()
+		def v1 = teste.metodo("fer")
+		println v1.getClass()
+		println v1
+		
+		
+		v1 = teste.metodo(5)
+		println v1.getClass()
+		println v1
+		
+		v1 = teste.metodo(new BigDecimal(5))
+		println v1.getClass()
+		println v1
+		
+		def data = new Date()
+		print data
+	//	v1 = teste.metodo(data)
+		println v1.getClass()
+		println v1
+		
+		
+	}
+	
+	@Test
+	void exercicio20() {
+		
 	}
 
 
