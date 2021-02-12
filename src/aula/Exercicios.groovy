@@ -353,8 +353,10 @@ class Exercicios {
 	}
 	
 	@Test
-	void exercicio20() {
+	void exercicio21() {
 		
+		println "oi"
+		//
 	}
 
 
