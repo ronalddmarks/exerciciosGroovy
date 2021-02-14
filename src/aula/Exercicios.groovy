@@ -388,12 +388,48 @@ class Exercicios {
 
 	@Test
 	void exercicio22() {
-		
+
 		def metodo = {int v1, int v2 -> v1 + v2}
 		println metodo(1, 2)
 		println metodo(2, 3)
 
 	}
+
+
+	@Test
+	void exercicio23() {
+
+		def imprimir = {String v ->
+			String temp = v.trim().replace("a","@")
+			temp = temp.toUpperCase()
+			temp
+		}
+		println imprimir("  Ronald   ")
+		println imprimir ("Indira")
+
+
+	}
+	
+	@Test
+	void exercicio24() {
+
+		def funcao = {v1, v2 -> v1 + v2}
+		def r1 = funcao(5, 5)
+		println r1.class	
+		println r1
+		
+		def r2 = funcao("Ron", "ald")
+		println r2.class
+		println r2
+
+		def r3 = funcao(10.50, 5.50)
+		println r3.class
+		println r3
+		
+	
+
+	}
+
 
 	//
 
