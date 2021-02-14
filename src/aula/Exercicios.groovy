@@ -307,84 +307,96 @@ class Exercicios {
 
 	@Test
 	void exercicio19() {
-		
+
 		def objeto = "texto"
 		println objeto.getClass()
-		
+
 		objeto = 10
 		println objeto.getClass()
-		
+
 		objeto = 10.00
 		println objeto.getClass()
-		
+
 		objeto = new Nota(itens: 2, valor: 20)
 		println objeto.getClass()
-		
+
 		objeto = new Pedido(cliente: "fernando", numero: 10)
 		println objeto.getClass()
-		
+
 
 	}
-	
+
 	@Test
 	void exercicio20() {
-	
+
 		def teste = new Teste()
 		def v1 = teste.metodo("fer")
 		println v1.getClass()
 		println v1
-		
-		
+
+
 		v1 = teste.metodo(5)
 		println v1.getClass()
 		println v1
-		
+
 		v1 = teste.metodo(new BigDecimal(5))
 		println v1.getClass()
 		println v1
-		
+
 		def data = new Date()
 		print data
-	//	v1 = teste.metodo(data)
+		//	v1 = teste.metodo(data)
 		println v1.getClass()
 		println v1
-		
-		
+
+
 	}
-	
+
 	@Test
 	void exercicio21() {
-		
+
 		def colecao = new ArrayList<String>()
 		colecao.add("fer")
 		colecao.add("anny")
 		for (item in colecao) {
 			println item
-						
+
 		}
-		
+
 		colecao = new ArrayList<Integer>()
 		colecao.add(1)
 		colecao.add(2)
 		for (item in colecao) {
 			println item
-						
+
 		}
-		
+
 		colecao = "Ronald Melo Marques"
 		for (item in colecao) {
 			println item
-						
+
 		}
-		
+
 		colecao = 10
 		for (item in colecao) {
 			println item
-						
+
 		}
-		
-		//
+
 	}
+
+
+	@Test
+	void exercicio22() {
+		
+		def metodo = {int v1, int v2 -> v1 + v2}
+		println metodo(1, 2)
+		println metodo(2, 3)
+
+	}
+
+	//
+
 
 
 
