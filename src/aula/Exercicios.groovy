@@ -14,6 +14,7 @@ import classes.Funcionario2
 import classes.Nota
 import classes.Pedido
 import classes.Produto
+import classes.Relatorio
 import classes.Somar
 import classes.Teste
 import classes.Venda
@@ -429,6 +430,18 @@ class Exercicios {
 	
 
 	}
+	
+	
+	@Test
+	void exercicio25() {
+		def limpeza = {texto -> texto.trim().replace("a","@").replace(" ","").capitalize()}
+		def rel = new Relatorio()
+		rel.emitir(" r o n a l d ", limpeza)
+		rel.emitir(" i n d i r a ", limpeza)
+	}
+
+		
+		
 
 
 	//
