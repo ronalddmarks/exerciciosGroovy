@@ -439,6 +439,15 @@ class Exercicios {
 		rel.emitir(" r o n a l d ", limpeza)
 		rel.emitir(" i n d i r a ", limpeza)
 	}
+	
+	@Test
+	void exercicio26() {
+		
+		def rel = new Relatorio()
+		rel.emitir("RONALD") {v -> v + " MARQUES"}
+		rel.emitir("RONALD") {a -> a.replace("N","#")}
+		
+	}
 
 		
 		
