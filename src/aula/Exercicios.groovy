@@ -355,7 +355,34 @@ class Exercicios {
 	@Test
 	void exercicio21() {
 		
-		println "oi"
+		def colecao = new ArrayList<String>()
+		colecao.add("fer")
+		colecao.add("anny")
+		for (item in colecao) {
+			println item
+						
+		}
+		
+		colecao = new ArrayList<Integer>()
+		colecao.add(1)
+		colecao.add(2)
+		for (item in colecao) {
+			println item
+						
+		}
+		
+		colecao = "Ronald Melo Marques"
+		for (item in colecao) {
+			println item
+						
+		}
+		
+		colecao = 10
+		for (item in colecao) {
+			println item
+						
+		}
+		
 		//
 	}
 
