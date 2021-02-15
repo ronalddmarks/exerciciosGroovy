@@ -595,24 +595,37 @@ class Exercicios {
 		v.viajar("Curitiba", 10)
 	}
 	
-	
-	
-	
+	@Test
+	void exercicio32ponto5() {
+		Expando cliente = new Expando()
+		cliente.nome = "Fernando"
+		cliente.idade = 37
+		cliente.impressao = {println "Nome: $nome idade: $idade"}
+		cliente.impressao()
 		
+		Expando livro = new Expando(autor: "Jonas", paginas: 100)
+		println livro.autor
+		println livro.paginas
+		
+	}
 	
-
+	@Test
+	void exercicio33() {
+		def v1 = new BigDecimal("10.50")
+		def v2 = 10.50
 		
+		println v2.getClass().name
 		
-
-
-	//
-
-
-
-
-
-
-
+		def v3 = v1 + v2
+		println v3.getClass()
+		
+		v3 = v1 -v1
+		println v3
+		
+		v3 = v1 * v1
+		println v3
+	}
+	
 
 
 }
