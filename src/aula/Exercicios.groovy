@@ -710,7 +710,7 @@ class Exercicios {
 		
 		def b = new File("d:/3.txt")
 		b.text = "Linha 1"
-		5.times { b <<  "\nnova linha usando sobrecarda de operador" }
+		5.times { b <<  "\nnova linha usando sobrecarga de operador" }
 		
 		def c = new File("d:/3.txt")
 		println c.text
@@ -734,6 +734,12 @@ class Exercicios {
 		Thread.start { 10.times{println "rodando na outra thread " + it} }	
 	
 	}
+	
+	@Test
+	void exercicio39() {
+		
+	}
+	
 	
 	
 	
