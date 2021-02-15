@@ -727,6 +727,15 @@ class Exercicios {
 		new File("c:/").eachFile { println it.name }
 	}
 	
+	@Test
+	void exercicio38() {
+	
+	//static main(args) {
+		Thread.start { 10.times{println "rodando na outra thread " + it} }	
+	
+	}
+	
+	
 	
 
 
