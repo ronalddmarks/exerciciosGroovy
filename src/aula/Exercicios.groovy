@@ -416,15 +416,15 @@ class Exercicios {
 
 
 	}
-	
+
 	@Test
 	void exercicio24() {
 
 		def funcao = {v1, v2 -> v1 + v2}
 		def r1 = funcao(5, 5)
-		println r1.class	
+		println r1.class
 		println r1
-		
+
 		def r2 = funcao("Ron", "ald")
 		println r2.class
 		println r2
@@ -432,12 +432,12 @@ class Exercicios {
 		def r3 = funcao(10.50, 5.50)
 		println r3.class
 		println r3
-		
-	
+
+
 
 	}
-	
-	
+
+
 	@Test
 	void exercicio25() {
 		def limpeza = {texto -> texto.trim().replace("a","@").replace(" ","").capitalize()}
@@ -445,156 +445,158 @@ class Exercicios {
 		rel.emitir(" r o n a l d ", limpeza)
 		rel.emitir(" i n d i r a ", limpeza)
 	}
-	
+
 	@Test
 	void exercicio26() {
-		
+
 		def rel = new Relatorio()
 		rel.emitir("RONALD") {v -> v + " MARQUES"}
 		rel.emitir("RONALD") {a -> a.replace("N","#")}
-		
+
 	}
-	
+
 	@Test
 	void exercicio27() {
-		
-		
+
+
 		def rel = new Relatorio()
 		rel.emitir("RONALD") {it + " Marques"}
 		rel.emitir("RONALD") {it.reverse()}
-		
+
 	}
-	
+
 	@Test
 	void exercicio28() {
 		Palco palco = new Palco()
 		Cantor cantor = null
-		
+
 		def imp = {println "vou cantar"}
-		cantor = imp 
+		cantor = imp
 		cantor.cantar()
-		
+
 		palco.show(cantor)
-		
+
 		cantor = {println "agora vou chorar"}
 		cantor.cantar()
-		
+
 		palco.show({println "closure cantando como se fosse cantor"})
-		
+
 	}
-	
+
 	@Test
 	void exercicio29() {
-		
+
 		Torcida t = null
 		def flamenguista = [
 			pular : {println "flamenguista pulando"},
-			gritar: {p -> println "flamengo - " + p}
-			] as Torcida
-			
-			t = flamenguista
-			t.pular()
-			t.gritar("vai ae")
-			
-			def porcada = [
-				pular : {println "proco eo"},
-				gritar : {p -> println "procooo - " + p  } 
-				] as Torcida
-				
-				t = porcada
-				t.pular()
-				t.gritar("verdão")
-				
-			
-		
+			gritar: {p ->
+				println "flamengo - " + p}
+		] as Torcida
+
+		t = flamenguista
+		t.pular()
+		t.gritar("vai ae")
+
+		def porcada = [
+			pular : {println "proco eo"},
+			gritar : {p ->
+				println "procooo - " + p  }
+		] as Torcida
+
+		t = porcada
+		t.pular()
+		t.gritar("verdão")
+
+
+
 	}
-	
-	
+
+
 	void exercicio30() {
-	//static main(arg) {
+		//static main(arg) {
 		def tela = new Tela()
 		tela.setVisible(true)
-		
+
 	}
-	
+
 	@Test
 	void exercicio31ponto1() {
 		def fat = new Fatura()
-		
+
 		// criando dinamicamente um novo metodo chamado vender()
 		fat.metaClass.vender = {valor -> println "venda no valor " + valor}
 		fat.vender(10.00)
 		fat.vender(1052.98)
-		
+
 	}
-	
+
 	@Test
 	void exercicio31ponto2() {
 		def f1 = new Fatura()
 		//1)tente executar a 1 vez, não vai dar pq não existe
 		//f1.fatura(10)
-		
+
 		//2)Adicionando método dinamico na classe
 		Fatura.metaClass.faturar = {valor -> println "fatura no valor = " + valor}
-		
+
 		def f2 = new Fatura()
 		f2.faturar(10)
-		
+
 		def f3 = new Fatura()
 		f3.faturar(22)
-		
+
 	}
-	
+
 	@Test
 	void exercicio32ponto1() {
 		def fat = new Fatura()
 		//fat.nome = "Fernando"
-		
+
 		fat.metaClass.nome = "Fernando"
 		println fat.nome
 		fat.nome = "Outro nome"
 		println fat.nome
-		
+
 	}
-	
+
 	@Test
 	void exercicio32ponto2() {
 		def f1 = new Fatura()
 		//f1.cliente = "teste"
-		
+
 		Fatura.metaClass.cliente = ""
-		
+
 		def fat = new Fatura()
 		fat.cliente = "Luna"
 		println fat.cliente
 	}
-	
+
 	@Test
 	void exercicio32ponto3() {
 		Fatura.metaClass.static.impressao = {println "metodo estatico ok"}
 		Fatura.impressao()
-		
+
 		def f = new Fatura()
 		f.impressao()
-		
+
 	}
-	
-	
+
+
 	@Test
 	void exercicio32ponto4() {
 		Viajar v = new Viajar()
 		v.viajar("Curitiba",10)
-		
-		
+
+
 		def nomeMetodo = {String lugar, BigDecimal valor ->
 			valor += 3.50
 			println "Novo preço "
 		}
-		
+
 		v.metaClass.viajar = nomeMetodo
 		v.viajar("Curitiba", 10)
 	}
-	
+
 	@Test
 	void exercicio32ponto5() {
 		Expando cliente = new Expando()
@@ -602,30 +604,58 @@ class Exercicios {
 		cliente.idade = 37
 		cliente.impressao = {println "Nome: $nome idade: $idade"}
 		cliente.impressao()
-		
+
 		Expando livro = new Expando(autor: "Jonas", paginas: 100)
 		println livro.autor
 		println livro.paginas
-		
+
 	}
-	
+
 	@Test
 	void exercicio33() {
 		def v1 = new BigDecimal("10.50")
 		def v2 = 10.50
-		
+
 		println v2.getClass().name
-		
+
 		def v3 = v1 + v2
 		println v3.getClass()
-		
+
 		v3 = v1 -v1
 		println v3
-		
+
 		v3 = v1 * v1
 		println v3
 	}
-	
+
+	@Test
+	void exercicio34() {
+		def v1 = "Fernando"
+		def v2 = "Fernando"
+		println v1 == v2
+
+		def v3 = v1 - "nando"
+		println v3
+
+		String texto = "fernando"
+		println texto.capitalize()
+		println texto.findIndexOf { it == "o" }
+
+		String textoGrande = '''
+        Meu texto grande
+		É muito grande 
+		e não e preciso ficar usando + toda hora        
+		'''
+		
+		println textoGrande
+		
+		def nome = "fernando"
+		def idade = 35
+		def salario = 1555.80
+		def sql = "insert into cliente (nome, idade, salario) value ($nome, $idade, $salario)"
+		println sql 
+	}
+
 
 
 }
