@@ -529,7 +529,43 @@ class Exercicios {
 	
 	@Test
 	void exercicio31ponto2() {
+		def f1 = new Fatura()
+		//1)tente executar a 1 vez, não vai dar pq não existe
+		//f1.fatura(10)
 		
+		//2)Adicionando método dinamico na classe
+		Fatura.metaClass.faturar = {valor -> println "fatura no valor = " + valor}
+		
+		def f2 = new Fatura()
+		f2.faturar(10)
+		
+		def f3 = new Fatura()
+		f3.faturar(22)
+		
+	}
+	
+	@Test
+	void exercicio32ponto1() {
+		def fat = new Fatura()
+		//fat.nome = "Fernando"
+		
+		fat.metaClass.nome = "Fernando"
+		println fat.nome
+		fat.nome = "Outro nome"
+		println fat.nome
+		
+	}
+	
+	@Test
+	void exercicio32ponto2() {
+		def f1 = new Fatura()
+		//f1.cliente = "teste"
+		
+		Fatura.metaClass.cliente = ""
+		
+		def fat = new Fatura()
+		fat.cliente = "Luna"
+		println fat.cliente
 	}
 	
 	
