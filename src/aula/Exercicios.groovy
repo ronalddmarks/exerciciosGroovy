@@ -24,6 +24,7 @@ import classes.Teste
 import classes.Torcida
 import classes.Venda
 import classes.Viajar
+import static java.util.Calendar.*
 
 
 class Exercicios {
@@ -646,16 +647,90 @@ class Exercicios {
 		É muito grande 
 		e não e preciso ficar usando + toda hora        
 		'''
-		
+
 		println textoGrande
-		
+
 		def nome = "fernando"
 		def idade = 35
 		def salario = 1555.80
 		def sql = "insert into cliente (nome, idade, salario) value ($nome, $idade, $salario)"
-		println sql 
+		println sql
 	}
 
+
+
+	@Test
+	void exercicio35() {
+
+		def data1 = new Date()
+		//data1[YEAR] = 2010
+		//data1[MONTH] = 1
+		//data1[DATE] = 14
+		println data1
+
+		def data2 = new Date()
+		//data2[YEAR] = 2015
+		//data2[MONTH] = DECEMBER
+		//data2[DATE] = 14
+		println data2
+
+		if (data2 >= data1) {
+			println "maior " + data2
+
+		}
+
+		Date data = new Date()
+		println data
+		//data += 1
+		///println data
+		//data -= 2
+		//println data 
+		//data --
+		//println data
+		
+		//formatação na mesma classe
+		//println data.format("dd/MM/yyy hh:mm:ss")
+
+
+	}
+	
+	@Test
+	void exercicio36() {
+		10.times { println it }
+		1.upto(10) { println it }
+		5.downto(1){ println it }
+	}
+	
+	@Test
+	void exercicio37() {
+		def x = new FileWriter("d:/1.txt").withWriter { e -> e.write("Ronald Marques") }
+	
+		def a = new File("d:/2.txt")
+		a.write("outro") 
+		
+		def b = new File("d:/3.txt")
+		b.text = "Linha 1"
+		5.times { b <<  "\nnova linha usando sobrecarda de operador" }
+		
+		def c = new File("d:/3.txt")
+		println c.text
+		
+		println c.readLines()*.toUpperCase()
+		
+		new File("d:/3.txt").eachLine { linha -> println linha }
+		
+		a.delete()
+		b.delete()
+		c.delete()
+		new File("d:/1.txt").delete()
+		
+		new File("c:/").eachFile { println it.name }
+	}
+	
+	
+
+
+	
 
 
 }
