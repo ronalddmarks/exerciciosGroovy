@@ -23,6 +23,7 @@ import classes.Tela
 import classes.Teste
 import classes.Torcida
 import classes.Venda
+import classes.Viajar
 
 
 class Exercicios {
@@ -567,6 +568,33 @@ class Exercicios {
 		fat.cliente = "Luna"
 		println fat.cliente
 	}
+	
+	@Test
+	void exercicio32ponto3() {
+		Fatura.metaClass.static.impressao = {println "metodo estatico ok"}
+		Fatura.impressao()
+		
+		def f = new Fatura()
+		f.impressao()
+		
+	}
+	
+	
+	@Test
+	void exercicio32ponto4() {
+		Viajar v = new Viajar()
+		v.viajar("Curitiba",10)
+		
+		
+		def nomeMetodo = {String lugar, BigDecimal valor ->
+			valor += 3.50
+			println "Novo preço "
+		}
+		
+		v.metaClass.viajar = nomeMetodo
+		v.viajar("Curitiba", 10)
+	}
+	
 	
 	
 	
