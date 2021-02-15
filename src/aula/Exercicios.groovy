@@ -19,6 +19,7 @@ import classes.Produto
 import classes.Relatorio
 import classes.Somar
 import classes.Teste
+import classes.Torcida
 import classes.Venda
 
 
@@ -478,6 +479,34 @@ class Exercicios {
 		palco.show({println "closure cantando como se fosse cantor"})
 		
 	}
+	
+	@Test
+	void exercicio29() {
+		
+		Torcida t = null
+		def flamenguista = [
+			pular : {println "flamenguista pulando"},
+			gritar: {p -> println "flamengo - " + p}
+			] as Torcida
+			
+			t = flamenguista
+			t.pular()
+			t.gritar("vai ae")
+			
+			def porcada = [
+				pular : {println "proco eo"},
+				gritar : {p -> println "procooo - " + p  } 
+				] as Torcida
+				
+				t = porcada
+				t.pular()
+				t.gritar("verdão")
+				
+			
+		
+	}
+	
+	
 		
 	
 
