@@ -10,6 +10,7 @@ import classes.Cliente
 import classes.Cliente as Cl
 import classes.Comida
 import classes.Conexao
+import classes.Fatura
 import classes.Funcionario
 import classes.Funcionario2
 import classes.Nota
@@ -508,11 +509,30 @@ class Exercicios {
 	}
 	
 	
-	static main(arg) {
+	void exercicio30() {
+	//static main(arg) {
 		def tela = new Tela()
 		tela.setVisible(true)
 		
 	}
+	
+	@Test
+	void exercicio31ponto1() {
+		def fat = new Fatura()
+		
+		// criando dinamicamente um novo metodo chamado vender()
+		fat.metaClass.vender = {valor -> println "venda no valor " + valor}
+		fat.vender(10.00)
+		fat.vender(1052.98)
+		
+	}
+	
+	@Test
+	void exercicio31ponto2() {
+		
+	}
+	
+	
 	
 		
 	
