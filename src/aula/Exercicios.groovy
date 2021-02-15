@@ -24,7 +24,7 @@ import classes.Teste
 import classes.Torcida
 import classes.Venda
 import classes.Viajar
-import static java.util.Calendar.*
+
 
 
 class Exercicios {
@@ -684,68 +684,90 @@ class Exercicios {
 		//data += 1
 		///println data
 		//data -= 2
-		//println data 
+		//println data
 		//data --
 		//println data
-		
+
 		//formatação na mesma classe
 		//println data.format("dd/MM/yyy hh:mm:ss")
 
 
 	}
-	
+
 	@Test
 	void exercicio36() {
 		10.times { println it }
 		1.upto(10) { println it }
 		5.downto(1){ println it }
 	}
-	
+
 	@Test
 	void exercicio37() {
 		def x = new FileWriter("d:/1.txt").withWriter { e -> e.write("Ronald Marques") }
-	
+
 		def a = new File("d:/2.txt")
-		a.write("outro") 
-		
+		a.write("outro")
+
 		def b = new File("d:/3.txt")
 		b.text = "Linha 1"
 		5.times { b <<  "\nnova linha usando sobrecarga de operador" }
-		
+
 		def c = new File("d:/3.txt")
 		println c.text
-		
+
 		println c.readLines()*.toUpperCase()
-		
+
 		new File("d:/3.txt").eachLine { linha -> println linha }
-		
+
 		a.delete()
 		b.delete()
 		c.delete()
 		new File("d:/1.txt").delete()
-		
+
 		new File("c:/").eachFile { println it.name }
 	}
-	
+
 	@Test
 	void exercicio38() {
-	
-	//static main(args) {
-		Thread.start { 10.times{println "rodando na outra thread " + it} }	
-	
+
+		//static main(args) {
+		Thread.start { 10.times{println "rodando na outra thread " + it} }
+
+	}
+
+	@Test
+	void exercicio39() {
+
+//		Sql con = Sql.newInstance("jdbc:hsqldb:file:D:/hsqldb/base;shutdown=true", "sa", "1234")
+		con.eachRow("select * from cliente") {p -> println p.id  + " - " + p.nome + " - " + p.email }
+
+		def lista = con.rows("select * from cliente")
+		lista.each { cli -> println.email }
+
+		con.executeInsert("insert into cliente(nome, email) values('groovy xuxu', 'groovy@groovy.com')")
+		println "pulando"
+		con.eachRow("select * from cliente") {p -> println p.nome}
+
+//		DataSet tabela = dataSet("cliente")
+		tabela.add(nome: "g2", email : "g@g.com")
+		println "pulando ..."
+		con.eachRow("select * from cliente") {p -> println p.nome}
+
+
 	}
 	
 	@Test
-	void exercicio39() {
+	void exercicio40() {
 		
 	}
-	
-	
-	
-	
 
 
-	
+
+
+
+
+
+
 
 
 }
