@@ -738,7 +738,7 @@ class Exercicios {
 	@Test
 	void exercicio39() {
 
-//		Sql con = Sql.newInstance("jdbc:hsqldb:file:D:/hsqldb/base;shutdown=true", "sa", "1234")
+		//		Sql con = Sql.newInstance("jdbc:hsqldb:file:D:/hsqldb/base;shutdown=true", "sa", "1234")
 		con.eachRow("select * from cliente") {p -> println p.id  + " - " + p.nome + " - " + p.email }
 
 		def lista = con.rows("select * from cliente")
@@ -748,68 +748,103 @@ class Exercicios {
 		println "pulando"
 		con.eachRow("select * from cliente") {p -> println p.nome}
 
-//		DataSet tabela = dataSet("cliente")
+		//		DataSet tabela = dataSet("cliente")
 		tabela.add(nome: "g2", email : "g@g.com")
 		println "pulando ..."
 		con.eachRow("select * from cliente") {p -> println p.nome}
 
 
 	}
-	
+
 	@Test
 	void exercicio40() {
-		
-		def lista1 = [1,2,3,4]
+
+		def lista1 = [1, 2, 3, 4]
 		println lista1.getClass().name
-		
-		def lista2 = ["Fer","Anny","Lucas","Cida"]
+
+		def lista2 = ["Fer", "Anny", "Lucas", "Cida"]
 		println lista1.getClass().name
-		
+
 		def lista3 = new ArrayList<BigDecimal>()
 		lista3.add(10.50)
-        lista3 << 10.50		
+		lista3 << 10.50
 		lista3 << 20.50
-		
+
 		lista1.each { println it }
 		lista2.each { println it }
 		lista3.each { println it }
-		
+
 		def total = 0
 		lista3.each { total += it }
 		println total
-		
-		
+
+
 		def clientes = []
 		clientes << new Cliente(nome: "Xico", data : new Date())
 		clientes << new Cliente(nome: "Luana", data : new Date())
 		clientes << new Cliente(nome: "Fernando", data : new Date())
 		clientes << new Cliente(nome: "Luciano", data : new Date())
-		
-		
+
+
 		def achou = clientes.find{c -> c.nome.contains("Lu")}
 		println achou
-		
-		
+
+
 		def encontradors = clientes.findAll{c -> c.nome.contains("Lu")}
 		encontradors.each { c -> println c }
-		
+
 		clientes.sort {c1, c2 -> c1.nome.compareTo(c2.nome)}
 		println clientes
-		
+
 		def set = clientes as Set
 		println set.getMetaClass().name
 		set.each{c -> println c}
-		
+
 		def lista4 = set as List
-		
+
 		def listaImutavel = lista4.asImmutable()
 		def setImutavel = set.asImmutable()
-		
+
 		def listaSys = lista4.asSynchronized()
 		def setSys = set.asSynchronized()
-		
-		
+
+		def func = clientes.collect {c -> new Funcionario(nome: )}
+
+
 	}
+
+	@Test
+	void exercicio40ponto2()  {
+		//	Map<String> String > map = new HashMap<>()
+		def mapa = [:]
+		println mapa.getMetaClass().name
+		
+		//mapa.put("pai", "Fernando")
+		mapa["pai"] = "Fernando"
+		mapa["mae"] = "Anny"
+		
+		println mapa
+		
+		//mapa.get("pai")
+		println mapa["pai"]
+		println mapa["mae"]
+		
+		def pessoas = ["jonas":10,"pedro":11, "rebeca": 12]
+		println pessoas
+		
+		pessoas.values().forEach {println it}
+		pessoas.keySet().forEach {println it}
+		
+		
+		
+		
+		
+		
+		
+        
+
+	}
+
 
 
 
