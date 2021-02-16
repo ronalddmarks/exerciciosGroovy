@@ -27,7 +27,7 @@ import classes.Viajar
 
 
 
-class Exercicios {
+class Exercicios  {
 
 	@Test
 	void exercicio1ponto2() {
@@ -762,7 +762,12 @@ class Exercicios {
 		def lista1 = [1, 2, 3, 4]
 		println lista1.getClass().name
 
-		def lista2 = ["Fer", "Anny", "Lucas", "Cida"]
+		def lista2 = [
+			"Fer",
+			"Anny",
+			"Lucas",
+			"Cida"
+		]
 		println lista1.getClass().name
 
 		def lista3 = new ArrayList<BigDecimal>()
@@ -818,33 +823,61 @@ class Exercicios {
 		//	Map<String> String > map = new HashMap<>()
 		def mapa = [:]
 		println mapa.getMetaClass().name
-		
+
 		//mapa.put("pai", "Fernando")
 		mapa["pai"] = "Fernando"
 		mapa["mae"] = "Anny"
-		
+
 		println mapa
-		
+
 		//mapa.get("pai")
 		println mapa["pai"]
 		println mapa["mae"]
-		
+
 		def pessoas = ["jonas":10,"pedro":11, "rebeca": 12]
 		println pessoas
-		
+
 		pessoas.values().forEach {println it}
 		pessoas.keySet().forEach {println it}
-		
-		
-		
-		
-		
-		
-		
-        
+
 
 	}
 
+	@Test
+	void exercicio41() {
+
+		def writer = new StringWriter()
+		//	def html = new MarkupBuilder(writer)
+		//	html.html {
+		head {title "Minha Pagina"}
+		body (id: "main"){
+			h1 "Titulo"
+			p "linha de texto"
+			p {strong "outro texto"}
+			a href : "pagina.html", "click aqui"
+		}
+		println writer
+	}
+	//
+
+
+
+	@Test
+	void exercicio42() {
+		
+		// exercicio pagina 32
+
+	}
+	
+	
+	@Test
+	void exercicio43() {
+	// classe Script.groovy
+
+	}
+	
+	
+	
 
 
 
